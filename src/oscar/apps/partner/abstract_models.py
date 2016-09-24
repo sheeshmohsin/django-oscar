@@ -27,7 +27,7 @@ class AbstractPartner(models.Model):
 
     #: A partner can have users assigned to it. This is used
     #: for access modelling in the permission-based dashboard
-    users = models.ManyToManyField(
+    users = models.OneToOneField(
         AUTH_USER_MODEL, related_name="partners",
         blank=True, verbose_name=_("Users"))
 
