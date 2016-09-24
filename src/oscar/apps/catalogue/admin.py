@@ -48,7 +48,7 @@ class ProductAdmin(admin.ModelAdmin):
                     'attribute_summary', 'date_created')
     list_filter = ['structure', 'is_discountable']
     raw_id_fields = ['parent']
-    inlines = [AttributeInline, CategoryInline, ProductRecommendationInline]
+    inlines = [AttributeInline, CategoryInline, ProductRecommendationInline, StockRecordInline]
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ['upc', 'title']
 
