@@ -8,9 +8,7 @@ __all__ = []
 
 if not is_model_registered('partner', 'Partner'):
     class Partner(AbstractPartner):
-        users = models.OneToOneField(
-	        AUTH_USER_MODEL, related_name="partners",
-	        blank=True, verbose_name=_("Users"))
+	pass
 
     __all__.append('Partner')
 
