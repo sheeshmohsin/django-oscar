@@ -12,8 +12,8 @@ class StockRecordAdmin(admin.ModelAdmin):
     list_filter = ('partner',)
     
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
-        if db_field.name == 'users':
-            kwargs['initial'] = request.user.id
+        if db_field.name == 'partner':
+            kwargs['initial'] = request.user.partner.id
             return db_field.formfield(**kwargs)
 
         return super(StockRecordAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
