@@ -27,7 +27,7 @@ def staff_member_required(view_func, login_url=None):
 
     @wraps(view_func)
     def _checklogin(request, *args, **kwargs):
-        if request.user.is_active and request.user.is_staff:
+        if request.user.is_active:
             return view_func(request, *args, **kwargs)
 
         # If user is not logged in, redirect to login page
