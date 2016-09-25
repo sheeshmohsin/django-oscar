@@ -8,7 +8,7 @@ __all__ = []
 
 if not is_model_registered('partner', 'Partner'):
     class Partner(AbstractPartner):
-	pass
+        pass
 
     __all__.append('Partner')
 
